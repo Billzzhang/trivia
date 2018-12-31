@@ -10,12 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_173859) do
+ActiveRecord::Schema.define(version: 2018_12_31_195839) do
 
   create_table "questions", force: :cascade do |t|
-    t.string "category"
-    t.string "type"
-    t.string "difficulty"
     t.string "question"
     t.string "correct_answer"
     t.text "incorrect_answer"
