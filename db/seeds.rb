@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+l = Difficulty.create(name: "easy")
+mandt = Category.create(name: "Entertainment: Musicals & Theatre") 
+l.questions.create(question: "When was Macbeth written", difficulty_id:1, category_id: 1)
