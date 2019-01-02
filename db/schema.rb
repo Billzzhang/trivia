@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_01_162818) do
+ActiveRecord::Schema.define(version: 2019_01_02_010851) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -20,10 +20,34 @@ ActiveRecord::Schema.define(version: 2019_01_01_162818) do
     t.index ["question_id"], name: "index_categories_on_question_id"
   end
 
+  create_table "correct_answers", force: :cascade do |t|
+    t.string "name"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_correct_answers_on_question_id"
+  end
+
+  create_table "incorrect_answers", force: :cascade do |t|
+    t.string "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "question_id"
+    t.index ["question_id"], name: "index_incorrect_answers_on_question_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_types_on_question_id"
   end
 
 end

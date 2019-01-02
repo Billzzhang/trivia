@@ -1,0 +1,2 @@
+class IncorrectAnswer < ApplicationRecord
+end
