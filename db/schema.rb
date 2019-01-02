@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_02_010851) do
+ActiveRecord::Schema.define(version: 2019_01_02_034401) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_categories_on_question_id"
   end
 
   create_table "correct_answers", force: :cascade do |t|
@@ -26,6 +24,12 @@ ActiveRecord::Schema.define(version: 2019_01_02_010851) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_correct_answers_on_question_id"
+  end
+
+  create_table "difficulties", force: :cascade do |t|
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "incorrect_answers", force: :cascade do |t|
@@ -40,14 +44,10 @@ ActiveRecord::Schema.define(version: 2019_01_02_010851) do
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.string "name"
-    t.integer "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_types_on_question_id"
+    t.integer "difficulty_id"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_questions_on_category_id"
+    t.index ["difficulty_id"], name: "index_questions_on_difficulty_id"
   end
 
 end
