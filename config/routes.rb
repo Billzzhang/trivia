@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :category do
-        resources :questions
+        resources :question do
+          resources :correct_answer
+        end
       end
     end
   end
   resources :category
+  resources :question
 end

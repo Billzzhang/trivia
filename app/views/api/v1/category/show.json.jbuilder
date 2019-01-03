@@ -1,6 +1,6 @@
 json.id @category.id
 json.name @category.name
 
-json.currect do
+json.current do
     json.question @category.questions
 end
