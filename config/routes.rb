@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :category
   resources :difficulty
   get 'questions' => 'questions#index'
+  get 'questions/:id' => 'questions#show'
 end

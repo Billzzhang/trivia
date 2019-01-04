@@ -1,0 +1,18 @@
+<h1> Question: <%=@question.id%> </h1>
+<table>
+    <thead>
+        <tr>
+            <td>Question</td>
+            <td>Correct Answer</td>
+            <td>Incorrect Answers</td>
+        </tr>
+    </thead>
+    <tbody>
+        <td><%=@question.question%></td>
+        <td><%=@question.correct_answer.name%></td>
+        <% @question.incorrect_answers.each do |answer| %>
+            <td><%=answer.answer%></td>
+        <%end%>
+    </tbody>
+</table>
+<a href="/questions">Go Back</a>

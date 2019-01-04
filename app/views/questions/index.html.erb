@@ -5,8 +5,7 @@
             <td>Category</td>
             <td>Difficulty</td>
             <td>Question</td>
-            <td>Correct Answer</td>
-            <td>Incorrect Answers</td>
+            <td>Answers</td>
         </tr>
     </thead>
     <tbody>
@@ -15,10 +14,7 @@
             <td><%=Category.find_by_id(question.category_id).name%></td>
             <td><%=Difficulty.find_by_id(question.difficulty_id).name%></td>
             <td><%=question.question%></td>
-            <td><%=question.correct_answer.name%></td>
-            <% question.incorrect_answers.each do |answer| %>
-                <td><%=answer.answer%></td>
-            <%end%>
+            <td><a href="/questions/<%=question.id%>">Answers</a></td>
         </tr>
         <% end %>
     </tbody>
