@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :category do
-        resources :question do
-          resources :correct_answer
-        end
+        resources :question 
       end
     end
   end
-  resources :category
+  resources :category, only: [:index]
   resources :question
 end

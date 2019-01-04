@@ -1,4 +1,4 @@
-class Api::V1::CategoryController < ApplicationController
+class Api::V1::CategoryController < ApiController
     before_action :set_category
     def show
     end
