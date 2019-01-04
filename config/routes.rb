@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :category do
-        resources :question 
+        resources :question #What does this line do?
+      end
+      resources :difficulty do
+        resources :question
       end
     end
   end
-  resources :category, only: [:index]
-  resources :question
+  resources :category
+  resources :difficulty
 end
