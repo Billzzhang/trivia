@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :difficulty
   get 'questions' => 'questions#index'
   get 'questions/:id' => 'questions#show'
+  get 'play' => 'questions#play'
 end
