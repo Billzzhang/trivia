@@ -1,22 +1,28 @@
-<title>Questions</title>
-<h1>These are <%= @questions.count %> questions</h1>
-<table>
-    <thead>
-        <tr>
-            <td><b>Category</b></td>
-            <td><b>Difficulty</b></td>
-            <td><b>Question</b></td>
-            <!--<td>Answers</td>-->
-        </tr>
-    </thead>
-    <tbody>
-        <% @questions.each do |question| %>
-        <tr>
-            <td><%=Category.find_by_id(question.category_id).name%></td>
-            <td><%=Difficulty.find_by_id(question.difficulty_id).name%></td>
-            <td><%=question.question%></td>
-            <td><a href="/questions/<%=question.id%>">Answers</a></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+<html>
+    <head>
+        <title>Questions</title>
+    </head>
+    <body>
+        <h1>These are <%= @questions.count %> questions</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Difficulty</th>
+                    <th>Question</th>
+                    <!--<td>Answers</td>-->
+                </tr>
+            </thead>
+            <tbody>
+                <% @questions.each do |question| %>
+                <tr>
+                    <td><%=Category.find_by_id(question.category_id).name%></td>
+                    <td><%=Difficulty.find_by_id(question.difficulty_id).name%></td>
+                    <td><%=question.question%></td>
+                    <td><a href="/questions/<%=question.id%>">Answers</a></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </body>
+</html>

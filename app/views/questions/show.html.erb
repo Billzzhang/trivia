@@ -1,18 +1,24 @@
-<title> Question: <%=@question.id%> </title>
-<table>
-    <thead>
-        <tr>
-            <td><b>Question</b></td>
-            <td><b>Correct Answer</b></td>
-            <td><b>Incorrect Answers</b></td>
-        </tr>
-    </thead>
-    <tbody>
-        <td><%=@question.question%></td>
-        <td><%=@question.correct_answer.name%></td>
-        <% @question.incorrect_answers.each do |answer| %>
-            <td><%=answer.answer%></td>
-        <%end%>
-    </tbody>
-</table>
-<a href="/questions">Go Back</a>
+<html>
+    <head>
+        <title> Question: <%=@question.id%> </title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Correct Answer</th>
+                    <th>Incorrect Answers</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td><%=@question.question%></td>
+                <td><%=@question.correct_answer.name%></td>
+                <% @question.incorrect_answers.each do |answer| %>
+                    <td><%=answer.answer%></td>
+                <%end%>
+            </tbody>
+        </table>
+        <a href="/questions">Go Back</a>
+    </body>
+</html>

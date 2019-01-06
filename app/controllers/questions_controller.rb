@@ -8,6 +8,8 @@ class QuestionsController < ApplicationController
         @question = Question.find(params[:id])
     end
     def play
-        
+        @questions=Question.all
+        @category = Category.all
+        @difficulty = Difficulty.all
     end
 end
