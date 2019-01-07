@@ -5,6 +5,49 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-l = Difficulty.create(name: "easy")
-mandt = Category.create(name: "Entertainment: Musicals & Theatre") 
-l.questions.create(question: "When was Macbeth written", difficulty_id:1, category_id: 1)
+
+#l = Difficulty.create(name: "easy")
+#mandt = Category.create(name: "Entertainment: Musicals & Theatre") 
+#l.questions.create(question: "When was Macbeth written", difficulty_id:1, category_id: 1)
+require 'json'
+Category.destroy_all
+Category.reset_pk_sequence
+Difficulty.destroy_all
+Difficulty.reset_pk_sequence
+open("trivia.json") do |file|
+    cData = [] #Category Data
+    dData = [] #Difficulty Data
+    file.read.each_line do |c|
+        @item = JSON.parse(c)
+        @item["results"].each do |a|
+            #puts a
+            cObject = {
+                "name": a["category"]
+            }
+            cData << cObject unless cData.include? cObject
+            
+            dObject = {
+                "name": a["difficulty"]
+            }
+            dData << dObject unless dData.include? dObject
+        end
+    end
+    Category.create!(cData)
+    Difficulty.create!(dData)
+    Question.destroy_all
+    Question.reset_pk_sequence
+    qData = []
+    @item["results"].each do |a|
+        cId = Category.find_by! name: a["category"]
+        dId = Difficulty.find_by! name: a["difficulty"]
+        qObject = {
+            "question": a["question"],
+            "difficulty_id": dId.id,
+            "category_id": cId.id
+        }
+        qData << qObject unless qData.include? qObject
+    end
+    Question.create!(qData)
+end
+
+    
