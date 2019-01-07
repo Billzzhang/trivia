@@ -10,19 +10,28 @@
 #mandt = Category.create(name: "Entertainment: Musicals & Theatre") 
 #l.questions.create(question: "When was Macbeth written", difficulty_id:1, category_id: 1)
 require 'json'
-require 'set'
 Category.destroy_all
 Category.reset_pk_sequence
-open("trivia.json") do |categories|
-    data = []
-    categories.read.each_line do |c|
+Difficulty.destroy_all
+Difficulty.reset_pk_sequence
+open("trivia.json") do |file|
+    cData = [] #Category Data
+    dData = [] #Difficulty Data
+    file.read.each_line do |c|
         @item = JSON.parse(c)
         @item["results"].each do |a|
-            object = {
+            cObject = {
                 "name": a["category"]
             }
-            data << object unless data.include? object
+            cData << cObject unless cData.include? cObject
+            dObject = {
+                "name": a["difficulty"]
+            }
+            dData << dObject unless dData.include? dObject
         end
     end
-    Category.create!(data)
+    Category.create!(cData)
+    Difficulty.create!(dData)
 end
+
+    
