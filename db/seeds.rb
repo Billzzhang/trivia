@@ -48,6 +48,29 @@ open("trivia.json") do |file|
         qData << qObject unless qData.include? qObject
     end
     Question.create!(qData)
+    CorrectAnswer.destroy_all
+    IncorrectAnswer.destroy_all
+    CorrectAnswer.reset_pk_sequence
+    IncorrectAnswer.reset_pk_sequence
+    caData = []
+    iaData = []
+    @item["results"].each do |a|
+        qId = Question.find_by! question: a["question"]
+        caObject = {
+            "name": a["correct_answer"],
+            "question_id": qId.id
+        }
+        a["incorrect_answers"].each do |answer|
+            iaObject = {
+                "answer": answer,
+                "question_id": qId.id
+            }
+            iaData << iaObject 
+        end
+        
+        caData << caObject
+        
+    end
+    CorrectAnswer.create!(caData)
+    IncorrectAnswer.create!(iaData)
 end
-
-    
