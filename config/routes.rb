@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do
     namespace :v1 do
       resources :category do
@@ -10,9 +9,11 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :category
-  resources :difficulty
+  root 'questions#category', as: 'home'
   get 'questions' => 'questions#index'
   get 'questions/:id' => 'questions#show'
-  get 'play' => 'questions#play'
+  get 'play/:category_id' => 'questions#play'
+  resources :category
+  resources :difficulty
+  resources :question
 end

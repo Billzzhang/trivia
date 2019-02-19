@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Trivia Game</title>
+        <h1>Pick your categories of questions!</h1>
+    </head>
+    <body>
+        <form>
+            <div>
+            <%@category.each do |category|%>
+                <input type="checkbox" name="category"><%=category.name%><br>
+            <%end%>
+            </div>
+        </form>
+        <button>Enter</button><br>
+    </body>
+</html>
