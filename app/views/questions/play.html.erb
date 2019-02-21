@@ -12,10 +12,10 @@
             <%randans.shuffle!%>
             <form>
                 <div>
-                <h4><%=question.question%></h4>
-                <%randans.each do |answer|%>
-                    <input type="radio" name="answer"><%=answer%><br>
-                <%end%>
+                    <h4><%=question.question%></h4>
+                    <%randans.each do |answer|%>
+                        <input type="radio" name="answer"><%=answer%><br>
+                    <%end%>
                 </div>
             </form>
         <%end%>

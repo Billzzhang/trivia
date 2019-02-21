@@ -3,8 +3,8 @@
         <title>Questions</title>
     </head>
     <body>
-        <h1>These are <%= @questions.count %> questions</h1>
-        <table>
+        <h1>These are <%= @questions.count %> questions total</h1>
+        <table class = "table">
             <thead>
                 <tr>
                     <th>Category</th>
@@ -19,7 +19,7 @@
                     <td><%=Category.find_by_id(question.category_id).name%></td>
                     <td><%=Difficulty.find_by_id(question.difficulty_id).name%></td>
                     <td><%=question.question%></td>
-                    <td><a href="/questions/<%=question.id%>">Answers</a></td>
+                    <td><a href="/questions/<%=question.id%>", class = 'btn btn-info'>Answers</a></td>
                 </tr>
                 <% end %>
             </tbody>
