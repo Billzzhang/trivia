@@ -1,3 +1,3 @@
 # Trivia Game
-Allows users to select categories and quizzes users the questions from specified categories.
+Allows users to select categories and quizzes users the questions from specified categories. <br/>
 Takes questions from OpenTDB (https://opentdb.com/)
