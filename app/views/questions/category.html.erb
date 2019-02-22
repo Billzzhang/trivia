@@ -2,14 +2,15 @@
     <head>
         <title>Trivia Game</title>
         <h1>Pick your categories of questions!</h1>
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
         <link rel ="stylesheet" href = "app/assets/stylesheets/category.css">
     </head>
     <body>
         <%= form_tag choice_path, :method => :put do |f|%>
+        <div class = "form-group-category">
             <div class = "form">
                 <%@category.each do |category|%>
-                    <div class = "form-group">
+                    <div class = "form">
                         <label class = "container">
                             <%= check_box_tag "category[]", category.id %>
                             <%= label_tag("category-type", category.name) %>
@@ -22,5 +23,6 @@
                 <%= submit_tag 'Submit', class: "btn btn-primary"%>
             </div> 
         <%end%>
+        </div>
     </body>
 </html>

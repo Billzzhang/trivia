@@ -8,14 +8,18 @@ class QuestionsController < ApplicationController
         @question = Question.find(params[:id])
     end
     def play
+        @category = params[:category]
         @questions = Question.where(:category_id => params[:category])
-        '''
-        @questions = Array.new
-        for @id in params[:category] do
-            @questions << Question.where(category_id: @id)
+    end
+    def end
+        @answers = Hash.new
+        #@questions = Question.where(:category_id => @categories)
+        @count = params[:count].keys.first.to_i
+        params.each do |k,v|
+            if k.starts_with? ("answer")
+                @answers[k] = v
+            end
         end
-        '''
-        #@questions = Question.where(category_id: params[:category_id])
     end
     def category
         @category = Category.all
