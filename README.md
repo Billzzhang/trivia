@@ -1,3 +1,3 @@
-#READ ME
-This is a ruby on rails app that allows the user to play trivia games 
-that pulls questions from a database
+# Trivia Game
+Allows users to select categories and quizzes users the questions from specified categories.
+Takes questions from OpenTDB (https://opentdb.com/)
