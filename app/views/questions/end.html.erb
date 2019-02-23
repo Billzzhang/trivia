@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Results</title>
+        <h1> Results </h1>
+    </head>
+    <body>
+        <%count = 0%>
+        <%@answers.each do |k,v|%>
+            <%q_id = k[6..-1]%>
+            <%if v == Question.find(q_id).correct_answer.name%>
+                <%count+= 1%>
+            <%end%>
+        <%end%>
+        <div>
+            <h2><%="You got "+ count.to_s + " out of " + @count.to_s + "."%></h2>
+            <%= link_to "Try Again", home_path%> 
+        </div>
+    </body>
+</html>

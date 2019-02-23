@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Trivia Game</title>
+        <h1>Play</h1>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel ="stylesheet" href = "app/assets/stylesheets/play.css">   
+    </head>
+    <body>
+        <div class = "form-group-play">
+        <%= form_tag result_path, :method => :put do |f|%>
+            <%count = 0%>
+            <%@questions.each do |question|%>
+                <%count += 1%>
+                <%randans = [question.correct_answer.name]%>
+                <%question.incorrect_answers.each do |answer| %>
+                    <%randans.append(answer.answer)%>
+                <%end%>
+                <%randans.shuffle!%>
+                <div>
+                    <h4><%=question.question%></h4>
+                    <%randans.each do |answer|%>
+                        <div class = "form-group">
+                            <label class = "container">
+                                <%= radio_button_tag "answer" + question.id.to_s, answer%> <br>
+                                <%= label_tag("answer", answer)%>
+                                <span class = "checkmark"></span>
+                            </label>
+                        </div>
+                    <%end%>
+                </div>
+            <%end%>
+            <div class = category-submit>
+                <%= submit_tag 'Submit', class: "btn btn-primary", :name => "count[#{count}]"%>
+            </div> 
+        <%end%>
+        </div>
+    </body>
+</html>

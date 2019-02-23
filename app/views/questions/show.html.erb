@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title> Question: <%=@question.id%> </title>
+    </head>
+    <body>
+        <table class = "table">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Correct Answer</th>
+                    <th>Incorrect Answers</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td><%=@question.question%></td>
+                <td><%=@question.correct_answer.name%></td>
+                <% @question.incorrect_answers.each do |answer| %>
+                    <td><%=answer.answer%></td>
+                <%end%>
+            </tbody>
+        </table>
+        <a href="/questions">Go Back</a>
+    </body>
+</html>
