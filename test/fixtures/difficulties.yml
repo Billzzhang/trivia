@@ -1,7 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   name: MyString
 
 two:
   name: MyString
+=======
+  type: 
+
+two:
+  type: 
+>>>>>>> a00b0871cf83f4b2e964315118b6f465c0c0e87a

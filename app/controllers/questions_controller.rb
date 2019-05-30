@@ -24,4 +24,8 @@ class QuestionsController < ApplicationController
     def category
         @category = Category.all
     end
+<<<<<<< HEAD
+=======
+
+>>>>>>> a00b0871cf83f4b2e964315118b6f465c0c0e87a
 end

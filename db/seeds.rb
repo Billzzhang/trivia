@@ -1,7 +1,11 @@
 require 'json'
 require 'rest-client'
 require 'htmlentities'
+<<<<<<< HEAD
 '''
+=======
+
+>>>>>>> a00b0871cf83f4b2e964315118b6f465c0c0e87a
 Category.destroy_all
 Category.reset_pk_sequence
 Difficulty.destroy_all
@@ -11,7 +15,11 @@ cData = [] #Category Data
 dData = [] #Difficulty Data
 questions_raw = RestClient.get("https://opentdb.com/api.php?amount=50")
 @item = JSON.parse(questions_raw)
+<<<<<<< HEAD
 decoder = HTMLEntities.new(flavor = "xhtml1")
+=======
+decoder = HTMLEntities.new(flavor = 'xhtml1')
+>>>>>>> a00b0871cf83f4b2e964315118b6f465c0c0e87a
 #puts @item
 @item["results"].each do |a|
     cObject = {
@@ -68,6 +76,7 @@ IncorrectAnswer.create!(iaData)
 
 '''
 open("trivia.json") do |file|
+<<<<<<< HEAD
     cData = [] #Category Data
     dData = [] #Difficulty Data
     decoder = HTMLEntities.new(flavor = "xhtml1")
@@ -127,3 +136,64 @@ open("trivia.json") do |file|
     CorrectAnswer.create!(caData)
     IncorrectAnswer.create!(iaData)
 end
+=======
+cData = [] #Category Data
+dData = [] #Difficulty Data
+file.read.each_line do |c|
+    @item = JSON.parse(c)
+    @item["results"].each do |a|
+        cObject = {
+            "name": a["category"]
+        }
+        cData << cObject unless cData.include? cObject
+        
+        dObject = {
+            "name": a["difficulty"]
+        }
+        dData << dObject unless dData.include? dObject
+    end
+end
+Category.create!(cData)
+Difficulty.create!(dData)
+Question.destroy_all
+Question.reset_pk_sequence
+qData = []
+@item["results"].each do |a|
+    cId = Category.find_by! name: a["category"]
+    dId = Difficulty.find_by! name: a["difficulty"]
+    qObject = {
+        "question": a["question"],
+        "difficulty_id": dId.id,
+        "category_id": cId.id
+    }
+    qData << qObject unless qData.include? qObject
+end
+Question.create!(qData)
+CorrectAnswer.destroy_all
+IncorrectAnswer.destroy_all
+CorrectAnswer.reset_pk_sequence
+IncorrectAnswer.reset_pk_sequence
+caData = []
+iaData = []
+@item["results"].each do |a|
+    qId = Question.find_by! question: a["question"]
+    caObject = {
+        "name": a["correct_answer"],
+        "question_id": qId.id
+    }
+    a["incorrect_answers"].each do |answer|
+        iaObject = {
+            "answer": answer,
+            "question_id": qId.id
+        }
+        iaData << iaObject 
+    end
+    
+    caData << caObject
+    
+end
+CorrectAnswer.create!(caData)
+IncorrectAnswer.create!(iaData)
+end
+'''
+>>>>>>> a00b0871cf83f4b2e964315118b6f465c0c0e87a

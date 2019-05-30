@@ -2,8 +2,14 @@
 
 one:
   answer: MyString
+<<<<<<< HEAD
   question: one
 
 two:
   answer: MyString
   question: two
+=======
+
+two:
+  answer: MyString
+>>>>>>> a00b0871cf83f4b2e964315118b6f465c0c0e87a

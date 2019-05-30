@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   question: MyString
   category: one
   difficulty: one
@@ -9,3 +10,19 @@ two:
   question: MyString
   category: two
   difficulty: two
+=======
+  category: MyString
+  type: 
+  difficulty: MyString
+  question: MyString
+  correct_answer: MyString
+  incorrect_answer: MyText
+
+two:
+  category: MyString
+  type: 
+  difficulty: MyString
+  question: MyString
+  correct_answer: MyString
+  incorrect_answer: MyText
+>>>>>>> a00b0871cf83f4b2e964315118b6f465c0c0e87a
