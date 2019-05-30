@@ -1,0 +1,23 @@
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/byebug-11.0.0/ext/byebug
+C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20190529-13912-j3050p.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/byebug-11.0.0/ext/byebug
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/byebug-11.0.0/ext/byebug
+make "DESTDIR="
+generating byebug-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/byebug-11.0.0/ext/byebug
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20190529-13912-u2oqhc/byebug

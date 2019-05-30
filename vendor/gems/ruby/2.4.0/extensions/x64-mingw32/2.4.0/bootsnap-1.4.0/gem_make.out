@@ -1,0 +1,19 @@
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/bootsnap-1.4.0/ext/bootsnap
+C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20190529-13912-bnk5sq.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/bootsnap-1.4.0/ext/bootsnap
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/bootsnap-1.4.0/ext/bootsnap
+make "DESTDIR="
+generating bootsnap-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/bootsnap-1.4.0/ext/bootsnap
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20190529-13912-dt445u/bootsnap

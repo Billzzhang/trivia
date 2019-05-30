@@ -1,0 +1,21 @@
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/duktape-2.0.1.0/ext/duktape
+C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20190529-13912-qreicf.rb extconf.rb
+checking for rb_sym2str()... yes
+creating Makefile
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR="
+generating duktape_ext-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling duktape.c
+compiling duktape_ext.c
+linking shared-object duktape_ext.so
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 duktape_ext.so ./.gem.20190529-13912-1ls5tjt

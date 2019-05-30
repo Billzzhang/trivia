@@ -1,0 +1,19 @@
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20190529-13912-30smym.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+generating websocket_mask-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: C:/Users/Bill Zhang/Sideprojects/trivia/vendor/gems/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20190529-13912-4q1duu
